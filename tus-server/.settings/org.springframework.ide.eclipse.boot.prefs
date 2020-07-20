@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+spring.boot.launch.profile.history=dev, authdbpg, datadbpg;dev, authdbdb2, datadbdb2;dev, authdbdb2, datadbpg;prod, authdbdb2, datadbdb2;

@@ -1,0 +1,29 @@
+<div *ngIf="text">
+  <header>
+    <h1 class="title">{{text}}</h1>
+  </header>
+</div>
+<div *ngIf="!text" class="padding">
+  &nbsp;
+</div>
+<!--
+<ion-grid>
+  <ion-row>
+    <ion-col text-left>{{labelFrom}}</ion-col>
+    <ion-col text-right>{{labelTo}}</ion-col>
+  </ion-row>
+</ion-grid>
+-->
+<div class="flex-container">
+  <span class="flex-item">{{labelFrom}}</span>
+  <span class="flex-item">{{labelTo}}</span>
+</div>
+<div class="flex-container-lines">
+    <ion-checkbox class="flex-item" [(ngModel)]="chk[0]" (click)="select(0)"></ion-checkbox>
+    <ion-checkbox class="flex-item" [(ngModel)]="chk[1]" (click)="select(1)"></ion-checkbox>
+    <ion-checkbox class="flex-item" [(ngModel)]="chk[2]" (click)="select(2)"></ion-checkbox>
+    <ion-checkbox class="flex-item" [(ngModel)]="chk[3]" (click)="select(3)"></ion-checkbox>
+    <ion-checkbox class="flex-item" [(ngModel)]="chk[4]" (click)="select(4)"></ion-checkbox>
+    <ion-checkbox class="flex-item" [(ngModel)]="chk[5]" (click)="select(5)"></ion-checkbox>
+    <ion-checkbox class="flex-item" [(ngModel)]="chk[6]" (click)="select(6)"></ion-checkbox>
+</div>

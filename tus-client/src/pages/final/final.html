@@ -1,0 +1,57 @@
+<!--
+  Generated template for the Final page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'final.title' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p class="item-description">
+    {{ 'final.description' | translate}}
+    <span *ngIf="!isWellbeing()">
+      {{ 'final.question-activity-part1' | translate}}:
+      <p class="activity">
+        <strong>{{getWbStartTime() | date:"H:mm" }} - {{getWbEndTime() | date:"H:mm" }} Uhr</strong>
+        <span *ngIf="getMainActivity()">
+          {{ 'final.question-activity-part2' | translate}}: <strong>{{getMainActivity()}}</strong>
+        </span>
+      </p>
+      <wellbeing-questions [(wellbeing)]="wellbeing"
+        feel="{{ 'final.question-wellbeeing-from' | translate}}: {{getWbStartTime() | date:'H:mm' }} {{ 'final.question-wellbeeing-to' | translate}} {{getWbEndTime() | date:'H:mm' }} {{ 'final.question-wellbeeing-feeling' | translate}}"
+        like="{{ 'final.question-wellbeeing-activity-from' | translate}} {{getWbStartTime() | date:'H:mm' }} {{ 'final.question-wellbeeing-activity-to' | translate}} {{getWbEndTime() | date:'H:mm' }} {{ 'final.question-wellbeeing-activity-like' | translate}}"
+      ></wellbeing-questions>
+    </span>
+    <span *ngIf="isWellbeing()">
+      {{ 'final.finish' | translate}}
+    </span>
+  </p>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button block (tap)="back()">
+            <ion-icon name="arrow-back"></ion-icon>&nbsp;
+            {{ 'common.back' | translate}}
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button block (tap)="finished()">
+            <ion-icon name="send"></ion-icon>&nbsp;
+            {{ 'final.send' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

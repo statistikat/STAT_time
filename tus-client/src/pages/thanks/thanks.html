@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ThanksPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title *ngIf="tooEarly">{{ 'thanks.title-too-early' | translate}}</ion-title>
+    <ion-title *ngIf="!tooEarly">{{ 'thanks.title-too-early-not' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="item-description">
+    <div *ngIf="tooEarly">
+      <p>
+        {{ 'thanks.too-early-part1' | translate}}
+        {{ 'thanks.too-early-part2' | translate}} <strong>{{ day | date: 'dd.MM.yyyy' }}</strong>.
+      </p>
+      <p>
+        {{ 'thanks.too-early-part3' | translate}} {{ day | date: 'dd.MM.yyyy' }} {{ 'thanks.too-early-part4' | translate}}
+      </p>
+    </div>
+    <p *ngIf="!tooEarly && !finished">
+      {{ 'thanks.too-early-not-finished-not' | translate}}
+    </p>
+    <div *ngIf="!tooEarly && finished">
+      <p>
+        {{ 'thanks.too-early-not-finished-part1' | translate}}
+      </p>
+      <p>{{ 'thanks.too-early-not-finished-part2' | translate}} <strong>{{ finished | date: 'dd.MM.yyyy' }}</strong> {{ 'thanks.too-early-not-finished-part3' | translate}}
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block (tap)="close()">
+      {{ 'common.finish' | translate}}
+    </button>
+  </ion-toolbar>
+</ion-footer>

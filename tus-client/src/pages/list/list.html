@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button *ngIf="selectedCount() != 0" ion-button icon-only (tap)="clearSelection()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title *ngIf="selectedCount() == 0">{{ dateStr() }}</ion-title>
+    <ion-title *ngIf="selectedCount() != 0">{{ selectedCount() == 1 ? "Bereich auswählen ..." : selectedCount() + " Einträge ausgewählt" }} </ion-title>
+    
+    <ion-buttons end>
+      <button *ngIf="selectedCount() != 0" ion-button icon-only (tap)="nextItem()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <p class="intro">{{ 'list.intro' | translate}}</p>
+  <ion-list>
+    <ion-item *ngFor="let item of items" detail-push (tap)="itemTapped(item)"><!--(press)="itemPressed(item)"-->
+      <span [attr.class]="isAndroid() ? 'startcol-md' : 'startcol'">{{start(item)}}</span>
+      <span class="dashcol">&ndash;</span>
+      <span class="endcol">{{ende(item)}}</span>
+      <span>{{item.primaryActivity}}</span>
+      <ion-icon *ngIf="item.selected" name="checkmark-circle" item-left></ion-icon>
+      <ion-icon *ngIf="!item.selected && selectedCount() > 0" item-left></ion-icon>
+      <ion-spinner *ngIf="progress(item)" item-right></ion-spinner>
+      <ion-icon [name]="icon(item)" [color]="iconColor(item)" item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <ion-toolbar>
+    <button ion-button (tap)="done($event)" icon-left>
+      <ion-icon name="done-all"></ion-icon>
+      {{ 'list.done-all' | translate}}
+    </button>
+  </ion-toolbar>
+
+</ion-content>

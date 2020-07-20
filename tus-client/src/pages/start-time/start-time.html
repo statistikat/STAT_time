@@ -1,0 +1,42 @@
+<!--
+  Generated template for the StartTimePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'start-time.start-time' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p class="intro">{{ 'start-time.intro' | translate}}</p>
+  <p class="question">
+    {{ 'start-time.question-part1' | translate}} <strong>{{dayString}}</strong> {{ 'start-time.question-part2' | translate}}
+  </p>
+  <p [attr.class]="isAndroid() ? 'input-location-md' : 'input-location'">
+    <ion-list>
+      <ion-item *ngIf="isAndroid()" class="input-divider"></ion-item>
+      <ion-item padding-vertical class="input">
+        <ion-datetime item-content text-center #dateTime
+              displayFormat="HH:mm"
+              placeholder="hh:mm"
+              minuteValues="0,10,20,30,40,50"
+              cancelText="{{ 'common.cancel' | translate}}"
+              doneText="{{ 'common.ok' | translate}}"
+            [(ngModel)]="startTime"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="isAndroid()" class="input-divider"></ion-item>
+    </ion-list>
+  </p>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block [disabled]="startTime == undefined" (tap)="close()">{{ 'common.ok' | translate}}</button>
+  </ion-toolbar>
+</ion-footer>

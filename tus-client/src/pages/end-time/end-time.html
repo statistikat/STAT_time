@@ -1,0 +1,37 @@
+<!--
+  Generated template for the EndTimePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'end-time.title' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p class="item-description">
+    {{ 'end-time.question-from-part1' | translate}} <strong>{{activity}}</strong> {{ 'end-time.question-from-part2' | translate}}
+  </p>
+    <ion-list>
+      <ion-item *ngIf="isAndroid()"></ion-item>
+      <ion-item>
+        <ion-label>{{ 'end-time.until' | translate}}:</ion-label>
+        <ion-datetime
+              displayFormat="HH:mm"
+              minuteValues="9,19,29,39,49,59"
+              [attr.min]="minTime"
+              cancelText="Abbrechen"
+              doneText="Ok"
+            [(ngModel)]="endTime"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="isAndroid()"></ion-item>
+    </ion-list>
+    <button ion-button block (tap)="close()">Ok</button>
+
+
+</ion-content>

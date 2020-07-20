@@ -1,0 +1,129 @@
+{
+    "title-survey": "Zeitverwendungserhebung",
+    "title-timeusage": "Zeitverwendung",    
+    "common": {
+        "cancel": "Abbrechen",
+        "done": "Fertig",
+        "back": "Zurück",
+        "ok": "Ok",
+        "next": "Weiter",
+        "choose": "Bitte auswählen",
+        "take": "Übernehmen",
+        "reset": "Zurücksetzen",
+        "close": "Schließen",
+        "finish": "Beenden",
+        "privacy": "Datenschutz",
+        "wait": "Bitte warten ..."
+    },
+    "end-time": {
+        "title": "Ende der Aktivität",
+        "question-from-part1": "Bis wann hat die Aktivität ",
+        "question-from-part2": " gedauert?",
+        "until": "Aktivität bis"
+    },
+    "final": {
+        "title": "Tagebuch abschließen",
+        "description": "Vielen Dank für Ihre Angaben im Tagebuch.",
+        "question-activity-part1": "Bitte sagen Sie uns noch, wie es Ihnen zu folgendem Zeitpunkt gegangen ist",
+        "question-activity-part2": ", Ihre Haupttätigkeit war",
+        "question-wellbeeing-from": "Von",
+        "question-wellbeeing-to": "bis",
+        "question-wellbeeing-feeling": " Uhr fühlte ich mich ...",
+        "question-wellbeeing-activity-from": "Was ich von ",
+        "question-wellbeeing-activity-to": " bis ",
+        "question-wellbeeing-activity-like": " tat, gefiel mir ...",
+        "finish": "Bitte klicken Sie nun auf \"Fertig\", um die Zeitverwendungserhebung erfolgreich abzuschließen. Ein Bearbeiten Ihrer Angaben ist danach nicht mehr möglich.",
+        "send": "Fertig, Daten senden",
+        "sendingerror": "Daten können derzeit nicht gesendet werden. Bitte versuchen Sie es später noch einmal." 
+    },
+    "item-details": {
+        "selected-count": "ausgewählte Einträge",
+        "activity-primary": "Haupttätigkeit",
+        "activity-secondary": "Nebentätigkeit",
+        "question-who": "Wer war dabei?",
+        "question-who-allone": "allein",
+        "question-who-parnter": "Partner",
+        "question-who-child": "Haushaltsmitglied 0-9 Jahre",
+        "question-who-member": "Haushaltsmitglied 10 Jahre und älter",
+        "question-who-other": "Andere bekannte Person",
+        "question-where": "Wo war das?",
+        "copytemplate1" : "Eintrag ",
+        "copytemplate2" : " kopiert.",
+        "copyentry1": "Eintrag von ",
+        "copyentry2": " Uhr kopieren"
+    },
+    "list": {
+        "intro": "Bitte tippen Sie auf eine Uhrzeit, um die Tätigkeit einzugeben.",
+        "selected-count-part1": "Bereich auswählen ...",
+        "selected-count-part2": "Einträge ausgewählt",
+        "done-all": "Tagebuch abschließen",
+        "journal1": "Das Tagebuch ist noch nicht vollständig.",
+        "journal2": "Bitte füllen Sie noch die fehlenden ",
+        "journal3": " Einträge aus.",
+        "completionprohibited1": " Abschluss verweigert: ",
+        "completionprohibited2": " Leereinträge",
+        "diarycompleted" : "Das Tagebuch ist vollständig ausgefüllt."
+        
+    },
+    "login": {
+        "title-short": "Zeitverwendung",
+        "username": "Benutzername",
+        "password": "Passwort",
+        "signin": "Anmelden",
+        "greeting": "Herzlich willkommen bei der Zeitverwendungserhebung der Statistik Austria. Um mit der  Befragung zu beginnen, melden Sie sich bitte mit Ihrem Benutzernamen und Kennwort an.",
+        "failed": "Anmeldung fehlgeschlagen."
+    },
+    "questions-where": {
+        "titel": "Wo war das?",
+        "home": "Zuhause",
+        "holiday": "Ferienhaus",
+        "work": "Arbeit",
+        "guest": "Bei wem anderen Zuhause",
+        "food": "Restaurant, Pub, Cafe",
+        "shopping": "Shopping Center, Markt, Geschäft",
+        "hotel": "Hotel, Gästehaus",
+        "other": "Anderer Ort"
+    },
+    "questions-who": {
+        "title": "Wer war dabei?",
+        "alone": "allein",
+        "partner": "Partner",
+        "child": "Haushaltsmitglied 0-9 Jahre",
+        "member": "Haushaltsmitglied ab 10 Jahren",
+        "other": "andere bekannte Person"
+    },
+    "start-time": {
+        "start-time": "Beginnzeit",
+        "intro": "Guten Tag! Damit wir das Tagebuch an Ihren Tag anpassen können, sagen Sie uns bitte, wann Ihr Tag begonnen hat.",
+        "question-part1": "Wann sind Sie ",
+        "question-part2": " aufgestanden?"
+    },
+    "thanks": {
+        "title-too-early": "Zeitverwendung",
+        "title-too-early-not": "Vielen Dank!",
+        "too-early-part1": "Die Installation der App für die Zeitverwendungserhebung und die Anmeldung mit den Zugangsdaten war erfolgreich. Ihr Tag ist der ",
+        "too-early-part2": "Ihr Tag ist der ",
+        "too-early-part3": "Bitte rufen Sie die App am ",
+        "too-early-part4": "wieder auf, um Ihren Tag zu protokollieren.",
+        "too-early-not-finished-not": "Vielen Dank für Ihre Teilnahme an der Zeitverwendungserhebung. Ihre Daten wurden erfolgreich an die Statistik Austria gesendet.",
+        "too-early-not-finished-part1": "Vielen Dank für Ihre Teilnahme an der Zeitverwendungserhebung.",
+        "too-early-not-finished-part2": "Sie haben bereits am ",
+        "too-early-not-finished-part3": " Ihre Daten erfolgreich an die Statistik Austria gesendet."
+    },
+    "user-info": {
+        "title": "Information",
+        "user-info": "Benutzerinformationen",
+        "name": "Name",
+        "wellbeing": "Wellbeing times",
+        "screen-size": "Screen size",
+        "orientation": "Orientierung",
+        "model": "Modell",
+        "platform": "Platform",
+        "app-info": "App Information"
+    },
+    "wellbeing-now": {
+        "title": "Wie geht es Ihnen?",
+        "feel": "Jetzt gerade fühle ich mich ...",
+        "like": "Was ich gerade tue gefällt mir ..."
+    }
+}

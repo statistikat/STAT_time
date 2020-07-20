@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="!selectedItem.selected || selectedCount() <= 1">{{title()}}</ion-title>
+    <ion-title *ngIf="selectedItem.selected && selectedCount() > 1">{{selectedCount()}} {{ 'item-details.selected-count' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content (swipe)="swipeEvent($event)">
+  <div *ngIf="selectedItem">
+    <ion-toolbar>
+      <ion-buttons end>
+        <button ion-button color="dark" [disabled]="!allowCopy()" (tap)="copyTemplate()">          
+          <span *ngIf="allowCopy()">{{ 'item-details.copyentry1' | translate}} {{templateTime()}} {{templateTime()}} {{ 'item-details.copyentry2' | translate}} &nbsp;</span>          
+          <ion-icon name="copy"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-list>      
+      <ion-item>
+        <ion-label>{{ 'end-time.until' | translate}}:</ion-label>
+        <ion-datetime
+              
+              displayFormat="HH:mm"
+              minuteValues="9,19,29,39,49,59"
+              [attr.min]="minTime"
+              cancelText="Abbrechen"
+              doneText="Ok"
+            [(ngModel)]="endTime"></ion-datetime>
+      </ion-item>      
+      <ion-item (tap)="primaryTapped($event)">
+        <p>{{ 'item-details.activity-primary' | translate}}:</p>{{selectedItem.primaryActivity}}&nbsp;
+      </ion-item>
+      <ion-item (tap)="secondaryTapped($event)">
+        <p>{{ 'item-details.activity-secondary' | translate}}:</p>{{selectedItem.secondaryActivity}}&nbsp;
+      </ion-item>
+      <ion-item detail-push (click)="buttonWhoTapped($event)">{{ 'item-details.question-who' | translate}}
+        <div>
+          <div *ngIf="!selectedItem.allein&&!selectedItem.partner&&!selectedItem.kind&&!selectedItem.mitglied&&!selectedItem.andere">&nbsp;</div>
+          <div *ngIf="selectedItem.allein">
+            <ion-chip>&nbsp;&nbsp;{{ 'item-details.question-who-allone' | translate}}
+              <button color="dark" ion-button clear (tap)="clearAllein()">
+                <ion-icon name="close-circle"></ion-icon>
+              </button>
+            </ion-chip>
+          </div>
+          <span *ngIf="selectedItem.partner">
+            <ion-chip>&nbsp;&nbsp;{{ 'item-details.question-who-partner' | translate}}
+              <button color="dark" ion-button clear (tap)="clearPartner()">
+                <ion-icon name="close-circle"></ion-icon>
+              </button>
+            </ion-chip>
+          </span>
+          <span *ngIf="selectedItem.kind">
+            <ion-chip>&nbsp;&nbsp;{{ 'item-details.question-who-child' | translate}}
+              <button color="dark" ion-button clear (tap)="clearKind()">
+                <ion-icon name="close-circle"></ion-icon>
+              </button>
+            </ion-chip>
+          </span>
+          <div *ngIf="selectedItem.mitglied">
+            <ion-chip>&nbsp;&nbsp;{{ 'item-details.question-who-member' | translate}}
+              <button color="dark" ion-button clear (tap)="clearMitglied()">
+                <ion-icon name="close-circle"></ion-icon>
+              </button>
+            </ion-chip>
+          </div>
+          <div *ngIf="selectedItem.andere">
+            <ion-chip>&nbsp;&nbsp;{{ 'item-details.question-who-other' | translate}}
+              <button color="dark" ion-button clear (tap)="clearAndere()">
+                <ion-icon name="close-circle"></ion-icon>
+              </button>
+            </ion-chip>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item detail-push (click)="buttonWhereTapped($event)">{{ 'item-details.question-where' | translate}}
+        <div>
+          <span *ngIf="selectedItem.ort">
+            <ion-chip>
+              &nbsp;&nbsp;{{whereText()}}
+              <button color="dark" ion-button clear (tap)="clearWhere()">
+                <ion-icon name="close-circle"></ion-icon>
+              </button>
+            </ion-chip>
+          </span>
+          &nbsp;
+        </div>
+      </ion-item>
+    </ion-list>
+    <div *ngIf="progress()" align="center">
+      <ion-spinner></ion-spinner>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button block (tap)="buttonBackTapped()" [disabled]="!hasPreviousItem()">
+          <ion-icon name="arrow-back"></ion-icon>&nbsp;{{previousTime()}}
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block (tap)="buttonOkTapped()">{{ 'common.ok' | translate}}</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block (tap)="buttonNextTapped()" [disabled]="!hasNextItem()">
+          {{nextTime()}}&nbsp;<ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
