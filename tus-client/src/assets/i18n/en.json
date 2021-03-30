@@ -1,0 +1,138 @@
+{
+    "title-survey": "Time Use Survey",
+    "title-timeusage": "Time Use",
+    "common": {
+        "cancel": "Cancel",
+        "done": "Done",
+        "back": "Back",
+        "ok": "Ok",
+        "next": "Next",
+        "choose": "Please select",
+        "take": "Take",
+        "reset": "Reset",
+        "close": "Close",
+        "finish": "Finish",
+        "privacy": "Privacy",
+        "privacy-url":"https://www.statistik.at/web_en/about_us/data_protection_information/index.html",
+        "wait": "Please wait ...",
+        "error":  "Error: "
+    },
+
+    "end-time": {
+        "title": "End of activity",
+        "question-from-part1": "How long did this activty ",
+        "question-from-part2": "take? ",
+        "until": "activity until"
+    },
+    "final": {
+        "title": "Finish diary",
+        "description": "Thank you for your cooperation!",
+        "question-activity-part1": "How did you feel at this moment?",
+        "question-activity-part2": ", your main activity was",
+        "question-wellbeeing-from": "From",
+        "question-wellbeeing-to": "until",
+        "question-wellbeeing-feeling": "o`clock I felt…",
+        "question-wellbeeing-activity-from": "What I did from",
+        "question-wellbeeing-activity-to": "until ",
+        "question-wellbeeing-activity-like": "I liked… ",
+        "finish": "Please select \"Done\" zu finish the diary. ",
+        "send": "Done, send data.",
+        "sendingerror": "Sending the data was unsuccessfull. Please try again later." 
+    },
+    "item-details": {
+        "selected-count": "selected entries",
+        "activity-primary": "Main activity",
+        "activity-secondary": "Secondary activity",
+        "question-who": "With whom?",
+        "question-who-allone": "Alone",
+        "question-who-parnter": "Partner",
+        "question-who-child": "Householdmember 0-9 years",
+        "question-who-member": "Householdmember 10 years and older",
+        "question-who-other": "Other known person",
+        "question-where": "Where?",
+        "copytemplate1" : "Entry ",
+        "copytemplate2" : " copied.",
+        "copyentry1": "Copy entry from ",
+        "copyentry2": " o'clock"
+    },
+    "list": {
+        "intro": "Please select a time slot for entering the activities",
+        "selected-count-part1": "Select scope",
+        "selected-count-part2": "Select entries",
+        "done-all": "Finish diary",
+        "journal1": "The diary is not completed.",
+        "journal2": "Please, complete the missing ",
+        "journal3": " entries",
+        "completionprohibited1": " Completion prohibited: ",
+        "completionprohibited2": " empty entries",
+        "diarycompleted" : "Diary completed."
+    },
+    "login": {
+        "title-short": "Time Use",
+        "username": "User name",
+        "password": "Password",
+        "signin": "Log In",
+        "greeting": "Welcome at STAT_time! To start the diary please log in with your username and your password.",
+        "failed": "Login failed."
+
+    },
+    "questions-where": {
+        "titel": "Where?",
+        "home": "At home",
+        "holiday": "Holiday home",
+        "work": "At work",
+        "guest": "At someone else home",
+        "food": "Restaurant, pub, cafe",
+        "shopping": "Shop, market, shopping center",
+        "hotel": "Hotel, guesthaus",
+        "other": "Other place"
+    },
+    "questions-who": {
+        "title": "with whom",
+        "alone": "Alone",
+        "partner": "Partner",
+        "child": "Householdmember 0-9 years",
+        "member": "Householdmember 10 years and older",
+        "other": "Other known person"
+    },
+    "start-time": {
+        "start-time": "Beginning time",
+        "intro": "Hello! To begin with the diary please tell us when did you start your day?",
+        "question-part1": "When did you get up ",
+        "question-part2": "?"
+    },
+    "thanks": {
+        "title-too-early": "Time Use",
+        "title-too-early-not": "Thank you!",
+        "too-early-part1": "The instalation and your login of STAT_time were successful. Your day is the… ",
+        "too-early-part2": "Your day is the… ",
+        "too-early-part3": "Please recall STAT_time on ",
+        "too-early-part4": "to protocol your day. ",
+        "too-early-not-finished-not": "Thank you for your participation on STAT_time! The data was sent successful!",
+        "too-early-not-finished-part1": "Thank you for your participation on STAT_time! ",
+        "too-early-not-finished-part2": "You have already send the data ",
+        "too-early-not-finished-part3": "Your data was send to STAT_time. "
+    },
+    "user-info": {
+        "title": "Information",
+        "user-info": "User Information",
+        "name": "Name",
+        "wellbeing": "Wellbeing times",
+        "screen-size": "Screen size",
+        "orientation": "Orientation",
+        "model": "model",
+        "platform": "platform",
+        "app-info": "App Information"
+    },
+    "wellbeing-now": {
+        "title": "How are you?",
+        "feel": "At the moment I feel … ",
+        "like": "I like what I do at the moment…"
+    },
+    "menu":
+    {
+        "entrylist": "Entry list",
+        "information": "Information",
+        "howareyou": "How are you?"
+    }
+}

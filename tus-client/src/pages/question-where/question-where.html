@@ -1,0 +1,29 @@
+<!--
+  Generated template for the QuestionWhere page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'questions-where.titel' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="item">
+    <ion-list>
+      <button ion-item (tap)="selected(1)">{{ 'questions-where.home' | translate}}</button>
+      <button ion-item (tap)="selected(2)">{{ 'questions-where.holiday' | translate}}</button>
+      <button ion-item (tap)="selected(3)">{{ 'questions-where.work' | translate}}</button>
+      <button ion-item (tap)="selected(4)">{{ 'questions-where.guest' | translate}}</button>
+      <button ion-item (tap)="selected(5)">{{ 'questions-where.food' | translate}}</button>
+      <button ion-item (tap)="selected(6)">{{ 'questions-where.shopping' | translate}}</button>
+      <button ion-item (tap)="selected(7)">{{ 'questions-where.hotel' | translate}}</button>
+      <button ion-item (tap)="selected(8)">{{ 'questions-where.other' | translate}}</button>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,4 @@
+Berechtigung (J2EE Rolle);Admin;SachbearbeiterBpk;Nutzer
+ROLE_ADMIN;X;X;
+ROLE_BPKERMITTELN;;X;
+ROLE_BASIC;X;;X

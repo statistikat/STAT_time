@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'title-timeusage' | translate}}</ion-title>
+    </ion-navbar>
+
+
+</ion-header>
+
+
+
+<ion-content padding>
+  
+  <form [formGroup]="loginData" (ngSubmit)="login()">
+      <ion-item>
+        <ion-label floating>{{ 'login.username' | translate}}</ion-label>
+        <ion-input formControlName="username" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{ 'login.password' | translate}}</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label floating>{{ 'login.url' | translate}}</ion-label>
+        <ion-input formControlName="url" type="url"></ion-input>
+      </ion-item> -->
+      <br/>
+
+
+      <button ion-button type="submit">{{ 'login.signin' | translate}}</button>
+    </form>
+    
+    <br/>
+    <p class="item-description">{{ 'login.greeting' | translate}}
+    </p>
+    <p *ngIf="isAndroid()"><a href="https://www.statistik.at/web_en/about_us/data_protection_information/index.html">{{ 'common.privacy' | translate}}</a></p>
+    <span >v{{ version.version }}</span>
+</ion-content>

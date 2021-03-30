@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>at.statistik.tus</groupId>
+	<artifactId>tus-server</artifactId>
+	<version>1.1.3</version>
+	<packaging>war</packaging>
+
+	<name>tus</name>
+	<description>Spring Boot Starter Programm mit REST API für die Kommunikation mit dem TUS Client</description>
+
+	<parent>
+		<groupId>at.statistik.maven</groupId>
+		<artifactId>spring-boot-starter-pom</artifactId>
+		<version>0.0.3</version>
+	</parent>
+
+	<properties>
+		<!-- define repository name, see standard-pom -->
+		<project.svn.reponame>P14</project.svn.reponame>
+		<project.scm.foldername>tus/${project.artifactId}</project.scm.foldername>
+
+		<querydsl.version>4.1.3</querydsl.version>
+		<stat-commons.version>0.0.5</stat-commons.version>
+		<hibernate.version>5.2.7.Final</hibernate.version>
+		<db2jcc4.version>4.19.26</db2jcc4.version>
+		<com.github.ulisesbocchio>1.18</com.github.ulisesbocchio>
+	</properties>
+
+	<!-- =========================================================== -->
+	<!-- Source Control Management, see standard-pom -->
+	<!-- =========================================================== -->
+	<scm>
+		<url>${project.scm.url}</url>
+		<connection>${project.scm.connection}</connection>
+	</scm>
+
+	<!-- =========================================================== -->
+	<!-- Distribution Management, see standard-pom -->
+	<!-- =========================================================== -->
+	<distributionManagement>
+		<site>
+			<id>siteserver</id>
+			<url>${project.site.url}</url>
+		</site>
+	</distributionManagement>
+
+	<dependencies>
+		<!-- support for encrypted properties -->
+
+		<dependency>
+			<groupId>com.github.ulisesbocchio</groupId>
+			<artifactId>jasypt-spring-boot</artifactId>
+			<version>${com.github.ulisesbocchio}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>at.statistik.springboot</groupId>
+			<artifactId>stat-commons-security</artifactId>
+			<version>${stat-commons.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-hibernate5</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+		</dependency>
+
+		<!-- QUERYDSL -->
+
+		<dependency>
+			<groupId>com.querydsl</groupId>
+			<artifactId>querydsl-apt</artifactId>
+			<version>${querydsl.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.querydsl</groupId>
+			<artifactId>querydsl-jpa</artifactId>
+			<version>${querydsl.version}</version>
+		</dependency>
+
+		<!-- PG Driver -->
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.14</version>
+		</dependency>
+
+		<!-- DB2 Driver -->
+
+		<dependency>
+			<groupId>com.ibm.db2.jdbc</groupId>
+			<artifactId>db2jcc4</artifactId>
+			<version>${db2jcc4.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.db2.jdbc</groupId>
+			<artifactId>db2jcc_license_cisuz</artifactId>
+			<version>${db2jcc4.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.db2.jdbc</groupId>
+			<artifactId>db2jcc_license_cu</artifactId>
+			<version>${db2jcc4.version}</version>
+		</dependency>
+
+
+
+		<!-- Tomcat Problem für NoClassDefFoundError: javax/inject/Provider -->
+
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+
+		<!-- TEST -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+
+
+	</dependencies>
+
+	<build>
+		<finalName>tus</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>com.mysema.maven</groupId>
+				<artifactId>apt-maven-plugin</artifactId>
+				<version>1.1.3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>process</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/generated-sources/java</outputDirectory>
+							<processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<executions>
+
+					<!-- generiere die Rollen- und Gruppenkonstanten -->
+					<execution>
+						<id>generate_role_constants</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<classpathScope>compile</classpathScope>
+							<mainClass>at.statistik.spring.commons.security.generator.RollenConstantsGenerator</mainClass>
+							<arguments>
+								Berechtigungsmatrix.csv-Datei
+								<argument>${project.basedir}/src/main/resources/META-INF/Berechtigungsmatrix.csv</argument>
+								target-sources
+								<argument>${project.build.directory}/generated-sources/java</argument>
+								packagename
+								<arguments>at.statistik.tus.security</arguments>
+								projectname
+								<arguments>tus</arguments>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://xswt0003:9080/manager/text</url>
+					<server>TomcatServer</server>
+					<username>angular_deployer</username>
+					<password>AngularDeployment42</password>
+					<path>tus</path>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											exec-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.3.2,)
+										</versionRange>
+										<goals>
+											<goal>java</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<profiles>
+
+		<!-- mvn -B dependency:copy -Ptomcatdeploy-test/prod -Drelease.version=... 
+			-Doutput.directory -Ddeploy.url=... -Ddeploy.username=... -Ddeploy.password=... 
+			-Ddeploy.path=... Beispiel: mvn -B dependency:copy -Ptomcatdeploy-test -Drelease.version=$releaseVersion 
+			-Doutput.directory=$WORKSPACE/testdeploy -Ddeploy.url=http://zswt0007.statistik.local:8080/manager/text 
+			-Ddeploy.username=starter.admin.script -Ddeploy.password=mypass -Ddeploy.path=/statistik.at/pvptstappl -->
+
+		<profile>
+			<id>tomcatdeploy</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>${project.artifactId}</artifactId>
+									<version>${release.version}</version>
+									<type>war</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${output.directory}</outputDirectory>
+									<destFileName>${project.build.finalName}.war</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.tomcat.maven</groupId>
+						<artifactId>tomcat7-maven-plugin</artifactId>
+						<version>2.2</version>
+						<configuration>
+							<url>${deploy.url}</url>
+							<username>${deploy.username}</username>
+							<password>${deploy.password}</password>
+							<path>${deploy.path}</path>
+							<warFile>${output.directory}/${project.build.finalName}.war</warFile>
+							<update>true</update>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

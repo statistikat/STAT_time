@@ -1,0 +1,25 @@
+question-range {
+
+  h1 {
+    font-size: 1.1em;
+    font-style: bold;
+    padding-top: 1em;
+  }
+
+  .padding {
+    padding-bottom: 0.4em;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.5em;
+  }
+
+  .flex-container-lines {
+    display: flex;
+    justify-content: space-between;
+    background: url('../assets/bg-line.png') 0 50% repeat-x;
+  }
+
+}

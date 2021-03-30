@@ -1,0 +1,14 @@
+{
+  "name": "tus-client",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/open",
+      "proxyUrl": "http://localhost:7070/statistik.at/tus/server/open",
+      "_proxyUrl": "https://www.statistik.at/tus/server"
+    }
+  ]
+}

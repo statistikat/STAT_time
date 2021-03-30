@@ -1,0 +1,22 @@
+<!--
+  Generated template for the WellbeingNow page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'wellbeing-now.title' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <wellbeing-questions [(wellbeing)]="wellbeing"
+    feel="{{ 'wellbeing-now.feel' | translate}}"
+    like="{{ 'wellbeing-now.like' | translate}}"
+  ></wellbeing-questions>
+  <button ion-button block [disabled]="!isComplete()" (tap)="close()">{{ 'common.ok' | translate}}</button>
+</ion-content>
