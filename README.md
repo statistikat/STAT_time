@@ -1,4 +1,4 @@
 # STAT_time
 STAT_time Service
 
-Source Code Requests please write to apps.statistik@gmail.com .
+Please write your source code requests to apps.statistik@gmail.com .
